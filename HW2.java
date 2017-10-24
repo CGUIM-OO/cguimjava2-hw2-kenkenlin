@@ -1,9 +1,11 @@
+
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 /*
- * ID: TODO: please add student ID here (5 points)
- * Name: TODO: please add student name here (5 points)
+ * ID: TODO: B0322013
+ * Name: TODO: ªL¯Õ¦b
  * Try to write some comments for your codes (methods, 15 points)
  */
 public class HW2 {
@@ -29,7 +31,7 @@ public class HW2 {
 	 */
 	private static boolean isAllCardsCorrect(ArrayList<Card> allCards,int nDeck){
 		//check the output 
-		boolean isCorrect=true;;
+		boolean isCorrect= true;;
 		HashMap <String,Integer> checkHash=new HashMap<String,Integer>();
 		for(Card card:allCards){
 			int suit= card.getSuit();
@@ -52,7 +54,7 @@ public class HW2 {
 					isCorrect=false;
 					break;
 				}
-			}
+			} 
 		}else{
 			isCorrect=false;
 		}
@@ -61,13 +63,28 @@ public class HW2 {
 
 }
 /*
- * Description: TODO: please add description here
+ * Description: TODO: this class contain 3 methods, Deck ,printDeck and getAllCards.
+ * The method, Deck, puts N decks of poker into "ArrayList<Card>"
+ * And,the next one, printDeck, which is called by Line.21,"deck.printDeck()", can ...
+ * ...print cards in ArrayList<Card> sequentially.
+ * 
  */
 class Deck{
 	private ArrayList<Card> cards;
 	//TODO: Please implement the constructor (30 points)
 	public Deck(int nDeck){
 		cards=new ArrayList<Card>();
+		for (int i = 1 ;i<=nDeck;i++) {
+			for(int j=1;j<=4;j++) {
+				for(int k=1;k<=13;k++) {
+					Card card=new Card(j,k);
+					cards.add(card);
+
+				}	
+
+			}
+		}
+		
 		//1 Deck have 52 cards, https://en.wikipedia.org/wiki/Poker
 		//Hint: Use new Card(x,y) and 3 for loops to add card into deck
 		//Sample code start
@@ -80,14 +97,22 @@ class Deck{
 	public void printDeck(){
 		//Hint: print all items in ArrayList<Card> cards, 
 		//TODO: please implement and reuse printCard method in Card class (5 points)
-
+		
+		for (int index = 0; index < cards.size(); index++)
+		{
+		
+		Card account = cards.get(index);
+		account.printCard(account.getSuit(),account.getRank());
+		}
+		
 	}
 	public ArrayList<Card> getAllCards(){
+		
 		return cards;
 	}
 }
 /*
- * Description: TODO: please add description here
+ * Description: TODO: This class create the informations into A card.
  */
 class Card{
 	private int suit; //Definition: 1~4, Clubs=1, Diamonds=2, Hearts=3, Spades=4
@@ -97,9 +122,80 @@ class Card{
 		rank=r;
 	}	
 	//TODO: 1. Please implement the printCard method (20 points, 10 for suit, 10 for rank)
-	public void printCard(){
+	public void printCard(int gg,int inin){
 		//Hint: print (System.out.println) card as suit,rank, for example: print 1,1 as Clubs Ace
-
+		switch(gg){
+		case 1 :
+			System.out.print("<Clubs    ");
+		break;	
+		case 2:
+			System.out.print("<Diamonds ");
+		break;	
+		case 3 :
+			System.out.print("<Hearts   ");
+		break;	
+		case 4:
+			System.out.print("<Spades   ");
+		break;
+			}
+		
+		switch(inin){
+		case 1 :
+		System.out.print("ACE> ");
+		break;
+		case 2:
+			System.out.print(inin+"> ");
+			
+			break;
+		case 3:
+			System.out.print(inin+"> ");
+			
+			break;
+		case 4:
+			System.out.print(inin+"> ");
+			
+			break;
+		case 5:
+			System.out.print(inin+"> ");
+			
+			break;
+		case 6:
+			System.out.print(inin+"> ");
+			
+			break;
+		case 7:
+			System.out.print(inin+"> ");
+			
+			break;
+		case 8:
+			System.out.print(inin+"> ");
+			
+			break;
+		case 9:
+			System.out.print(inin+"> ");
+			
+			break;
+		case 10:
+			System.out.print(inin+"> ");
+			
+			break;
+		case 11:
+			System.out.print("JACK> ");
+			
+			break;
+		case 12:
+			System.out.print("QUEEN> ");
+			
+			break;
+		case 13 :
+			System.out.print("KING> ");
+			System.out.println("");
+		break;
+			
+		
+		
+		}
+			
 	}
 	public int getSuit(){
 		return suit;
