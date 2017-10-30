@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 /*
  * ID: TODO: B0322013
- * Name: TODO: �L�զb
+ * Name: TODO: 林耿在
  * Try to write some comments for your codes (methods, 15 points)
  */
 public class HW2 {
